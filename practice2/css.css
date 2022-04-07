@@ -1,0 +1,373 @@
+*{  /* обращение ко всем элементам */
+    padding: 0;  /* внутренние отступы */
+    margin: 0;  /* внешние отступы */
+    font-family: Trebuchet MS;  /* приятный шрифт */
+}
+::-webkit-scrollbar-button{
+    background-image: url('');
+    background-repeat: no-repeat;
+    width:5px;
+    height:0px;
+}
+    
+::-webkit-scrollbar-track {
+    background-color:#E0DDD6; /*цвет для фона*/
+}
+    
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 50%;
+    border-radius: 5px;
+    background-color:#bebdb9; /*цвет для ползунка без :hover*/
+}
+    
+::-webkit-scrollbar-thumb:hover{
+    background-color: #aaa9a2; /*цвет для ползунка с :hover*/
+}
+    
+::-webkit-resizer{
+    background-image:url('');
+    background-repeat:no-repeat;
+    width:4px;
+    height:0px;
+}
+    
+::-webkit-scrollbar{
+    width: 10px;
+}
+.wrapperLogin{  /* обёртка для страницы с авторизацией */
+    width: 100vw;  /* вся возможная ширина */
+    height: 100vh;  /* вся возможная высота */
+    overflow: hidden;
+    background-color: #F0E5CF;  /* цвет фона */
+    display: flex;  /* отображение flex сетки */
+    justify-content: center;  /* центрирование контента */
+    align-items: center;  /* центрирование атрибутов */
+}
+.loginCard{  /* карточка авторизации */
+    width: 400px;  /* делаем её.. */
+    height: 400px;  /* ..квадратной */
+    border-radius: 30px;  /* скругляем */
+    box-shadow: 4px 4px 4px 3px #d6ccb9;  /* делаем тень */
+    background-color: #F7F6F2;  /* цвет карточки */
+    transition: box-shadow 1s;  /* анимация по появлению тени */
+}
+.loginCard:hover{  /* при наведении... */
+    box-shadow: 4px 4px 4px 3px #968f7f;  /* ...работаем с тенью */
+}
+.headerCard{  /* заголовок карточки */
+    width: 100%;  /* ширина и.. */
+    height: 80px;  /* ..высота ОТНОСИТЕЛЬНО карточки*/
+    border-radius: 30px 30px 0 0;  /* также скругляем, но уже верхние левый и правый углы, иначе эта штука будет делать карточку квадратной сверху */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Trebuchet MS;
+    color:#8b8b8b;  /* цвет текста */
+    font-size: 40px;  /* размер текста */
+    border-bottom: 3px solid #a09f9f;  /* делаем отчерк */
+}
+.loginSystem{  /* блок с авторизацией */
+    width: 100%;  /* ширина и.. */
+    height: 240px;  /* ..высота ОТНОСИТЕЛЬНО карточки */
+}
+.userName, .userPassword{  /* блоки с логином и паролем */
+    width: 100%;
+    height: 60px;
+    margin-top: 40px;  /* отступают сверху 40px */
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    position: relative;  /* позиционируем относительно карточки */
+}
+i{  /* иконки от FontAwesome */
+    transition: color 1s;  /* анимация на смену цвета */
+}
+.userName:hover i, .userPassword:hover i{  /* при наведении в отдельности на блоки с авторизацией */
+    color: #476996;  /* меняем цвет */
+}
+.userName > p, .userPassword > p{  /* все параграфы в блоках авторизации */
+    position: relative;  /* позиционируются относительно карточки */
+    top:-5px;  /* со сдвигом сверху (для красоты) */
+    color:#8b8b8b;
+    display: flex;  /* делаем их контент в линию */
+}
+input[type=text], input[type=password], input[type=date], input[type=number], textarea, select{  /* все поля типа input type = text | password */
+    background-color: #d4d2cc;  /* цвет фона поля */
+    border-radius: 5px;  /* скругляем края */
+    width: 250px;
+    margin-left: 30px;  /* отодвигаемся от иконки */
+    border: none;  /* убираем тупую рамку */
+    padding-left: 15px;  /* делаем отступ внутренних букав */
+}
+input[type=submit]{ /*обращение ко всем кнопкам отправки*/
+    padding:5px 10px;  /*внутренние отступы 5px сверху-снизу и 15 по бокам*/
+    color: #777777;
+    font-size: 18px;
+    background:#cecbc5;  /*фон*/
+    border:0 none; /*без рамки*/
+    cursor:pointer; /*установка курсора*/
+    -webkit-border-radius: 5px; /*для различных браузеров, скругление*/
+    border-radius: 5px;  /*скругление каждого угла*/
+    position: relative;
+    left: 50%;  /* двигаем внутри, относительно карточки */
+    top: 30px;  /* двигаем внутри, относительно карточки */
+    transform: translate(-50%, 0);  /* центрируем */
+}
+.registration{
+    width: calc(100%-10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:5px 10px;  /*внутренние отступы 5px сверху-снизу и 15 по бокам*/
+    color: #8B8B8B;
+    font-size: 18px;
+    background: rgb(247,246,242);
+    background: linear-gradient(180deg, rgba(247,246,242,1) 0%, rgba(211,211,213,1) 50%, rgba(206,203,197,1) 100%);
+    border:0 none; /*без рамки*/
+    cursor:pointer; /*установка курсора*/
+    -webkit-border-radius: 5px; /*для различных браузеров, скругление*/
+    border-radius: 0px 0px 30px 30px;  /*скругление каждого угла*/
+    position: relative;
+    left: 50%;  /* двигаем внутри, относительно карточки */
+    top: 60px;  /* двигаем внутри, относительно карточки */
+    transform: translate(-50%, 0);  /* центрируем */
+}
+
+/* Стили для index.php */
+.wrapperMain{  /* обертка */
+    width: 100vw;
+    height: 100vh;
+    background-color: #4b6587;
+}
+.container {  /* блок, в котором делаем grid-сетку */
+    /* grid-сетка позволяет позиционировать объекты так, как вы хотите,
+    задав им свое место внутри сетки. Размеры определяются границами ячеек, которые
+    можно также делить, задав уже им свойство display:grid */
+  display: grid;
+  width: 100%;
+  height: 100%; 
+  grid-template-columns: 1fr 1fr 1fr;   /* 1fr - это одна часть. Т.е. блок делится в отношении 33,(3)% */
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;   /* можно было написать calc(1fr, 7) */
+  gap: 0px 0px;  /* отступы меж ячеек */
+  grid-template-areas:   /* определение классов сетки */
+    /* колонок 3, строчек 7. То, как я ВОТ ТУТ определю классы для блоков,
+    ТАК и выстроятся блоки внутри сетки на сайте */
+    "department content content"
+    "reasons content content"
+    "report content content"
+    "vialator content content"
+    "worker content content"
+    "request content content"
+    "exit content content"; 
+}
+.content {  /* блок с результатами запросов */
+    grid-area: content;  /* определяю, что он находится везде там, где выше есть content в сетке */
+    background-color: #e2e1dd;
+    border-radius: 30px 0 0 30px;
+    margin: 10px 0 0 10px;
+    overflow: auto;  /* автоматическая прокрутка, если контент не поместится. По умолчанию скрыта */
+    position: relative;
+}
+.createCRUD {
+    background-color: #D1D0CE;
+    width: 35%;
+    height: auto;
+    padding: 10px 0;
+    min-height: 100px;
+    position: fixed;
+    bottom:0;
+    z-index: 2;
+    border-radius: 0 15px 0 0;
+    box-shadow: 5px 5px 10px 0px #a7a6a2;
+}
+.createCRUD p{
+    margin: 5px;
+}
+#CRUDsubmit{
+    padding:5px 10px;  /*внутренние отступы 5px сверху-снизу и 15 по бокам*/
+    color: #777777;
+    font-size: 18px;
+    background:#ACABA9;  /*фон*/
+    border:0 none; /*без рамки*/
+    cursor:pointer; /*установка курсора*/
+    -webkit-border-radius: 5px; /*для различных браузеров, скругление*/
+    border-radius: 5px;  /*скругление каждого угла*/
+    position: absolute;
+    left: 400px;
+    top:15px;
+}
+.menuBlock{  /* каждый блок-ссылка в меню */
+    background-color: #F7F6F2;
+    color: #4b6587;
+    position: relative;  /*Относительное позиционирование*/
+    transition: .5s;  /*Указание длительности изменений*/
+    shape-outside: polygon(0 0, 100% 0, 91.75% 100%, 0 100%);  /*Задание формы*/
+    clip-path: polygon(0 0, 100% 0, 91.75% 100%, 0 100%);  /*Задание формы*/
+    left:-41px;  /*Смещение влево*/
+    z-index: 2;  /*Указываем уровень перспективы, чтобы они были выше всех*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menuBlock:hover{  /*Стили для блока меню при наведении*/
+    left:0px;  /*Смещение по Оси Х*/
+}
+.menuBlock > a{  /*Обращение ко всем ссылкам в Блоках меню*/
+    position: relative;  /*Относительное позиционирование*/
+    color:#41280b;  /*Цвет текста*/
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 1.5em;  /*Указание размера*/
+    text-decoration: none;  /*Убираем подчеркивания у ссылок*/
+}
+.department{ grid-area: department;}   /* определяю размещение */
+.reasons{ grid-area: reasons;}
+.report{ grid-area: report;}
+.vialator{ grid-area: vialator;}
+.request{ grid-area: request;}
+.worker{ grid-area: worker;}
+.exit{ grid-area: exit;}
+.table {  /* обращаюсь к табличке */
+	width: 100%;
+	border: none;  /* без рамки */
+	margin-bottom: 20px;
+    margin-top: 30px;
+	border-collapse: separate;  /* убираю двойные линии */
+}
+.table thead th {  /* обращаюсь к заголовкам */
+	font-weight: bold;  /* жирный текст */
+	text-align: left;  /* позиционирую текст слева */
+	border: none;
+	padding: 10px 15px;
+	background: #EDEDED;
+	font-size: 14px;
+	border-top: 1px solid #ddd;
+    width: auto;
+}
+.table tr th:first-child, .table tr td:first-child {  /* каждый первый заголовок и первая ячейка */
+	border-left: 1px solid #ddd;  /* такая рамка */
+}
+.table tr th:last-child, .table tr td:last-child {  /* аналогично с последними */
+	border-right: 1px solid #ddd;
+}
+.table thead tr th:first-child {  /* скругляю шапку */
+	border-radius: 20px 0 0 0;
+}
+.table thead tr th:last-child {  /* и низ */
+	border-radius: 0 20px 0 0;
+}
+.table tbody td {  /* ко всем ячейкам */
+	text-align: left;
+	border: none;
+	padding: 10px 15px;
+	font-size: 14px;
+	vertical-align: top;
+}
+.table tbody tr:nth-child(even) {  /* каждая четная строка */
+	background: #d1d0ce;  /* другой фон */
+}
+.table tbody tr:last-child td{  /* в последней строке ячейки */
+	border-bottom: 1px solid #ddd;  /* с такой рамкой */
+}
+.table tbody tr:last-child td:first-child {  /* в последней строке первая ячейка */
+	border-radius: 0 0 0 20px;  /* вот такое скругление */
+}
+.table tbody tr:last-child td:last-child {  /* аналогично с последней */
+	border-radius: 0 0 20px 0;  /* крч, вручную задал стили для каждого угла, потому что не шибко доверял автоматизации */
+}
+.updateDelete{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+}
+.delete{
+    color:#f00;
+}
+.goBack{
+    display: flex;
+    shape-outside: polygon(0 50%, 40% 0, 40% 33.3%, 100% 33.3%, 100% 66.6%, 40% 66.6%, 40% 100%);  /*Задание формы*/
+    clip-path: polygon(0 50%, 40% 0, 40% 33.3%, 100% 33.3%, 100% 66.6%, 40% 66.6%, 40% 100%);  /*Задание формы*/
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    padding: 5px;
+    left: 20px;
+    width: 100px;
+    height: 75px;
+    background-color: #BEBBB5;
+    color: #000047;
+    text-decoration: none;
+}
+  /* стили для запросов */
+.select-css {   /* стили для списка. Я с ними ранне не работал, стырил с сайта, но стили поясню */
+    display: block; 
+    font-size: 16px; 
+    font-family: Trebuchet MS; 
+    font-weight: 700; 
+    color: #444; 
+    line-height: 1.3; 
+    padding: .6em 1.4em .5em .8em;   /* внутренние отступы относительно себя нормального */
+    width: 34%; 
+    max-width: 100%;   /* покуда его можно растянуть чуть что */
+    box-sizing: border-box; 
+    margin: 0; 
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.04); 
+    border-radius: .5em;
+    -moz-appearance: none;  /* для мозилы */
+    -webkit-appearance: none;  /* для других браузеров */
+    appearance: none;  /* отключаются стили, вшитые в ОС и ПО */
+    background-color: #fff;
+    float:left;   /* обтекание новых блоков справа */
+} 
+.select-css::-ms-expand { display: none; }   /* псевдокласс для кнопки раскрытия */
+.select-css:hover { border-color: #888; } 
+.select-css:focus {   /* когда выбрали */
+    border-color: #aaa; 
+    box-shadow: 0 0 1px 3px #cccbc9;
+    box-shadow: 0 0 0 3px -moz-mac-focusring; 
+    color: #222;
+    outline: none; 
+} 
+.select-css option { font-weight:normal; }
+
+*[dir="rtl"] .select-css, :root:lang(ar) .select-css, :root:lang(iw) .select-css {   /* для все возможных классов к этому списку */
+background-position: left .7em top 50%, 0 0; 
+padding: .6em .8em .5em 1.4em; 
+}
+.value810{  /* блок ввода для запросов 8-10 */
+    position: relative;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.valueText810{  /* поле ввода аргументов */
+    background-color: #a5a29b;
+    border-radius: 5px;
+    width: 250px;
+    margin-left: 30px;
+    border: none;
+    padding-left: 15px;
+}
+
+.admin{
+    width: 100px;
+    height: 100px;
+    background-color: #f00;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.admin > a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
